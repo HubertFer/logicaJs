@@ -1,0 +1,29 @@
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+h1{
+    color: blue;
+    font-size: 48px;
+}
+
+img{
+ 
+    height: 300px;
+}
+
+p{
+    text-align: center;
+}
+
+nome{
+    float: right;
+}
+
+image{
+    float: left;
+}
+
+bold{
+    font-style: bold;
+}
