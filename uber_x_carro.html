@@ -1,32 +1,36 @@
 <html>
     <title>Carro X Uber, Quem custa mais?</title>
     <meta charset="utf-8"/>
-
+    <script src="function.js"></script>
     <h1>Uber</h1>
     <script> 
         var precoBase = 2.00
         var tempoEmMin = 0.26
         var precoEmKm = 1.40
-        //var qtsMin = parseFloat(prompt("Quantos minutos você gasta na viagem de Uber?"))
-        var qtsKm = parseFloat(prompt("Quantos KMs você percorre?").replace(",","."))
+        var qtsKm = pegarNumero("Quantos KMs você vai percorrer?")
         var velocidadeMedia = 25
-
         var tempoHora = qtsKm / velocidadeMedia
         var tempoEmMinutos = tempoHora * 60
         var precoUber = precoBase + (tempoEmMinutos * tempoEmMin) + (precoEmKm * qtsKm)
-        document.write("Total : R$ = " + precoUber.toFixed(2).replace(".",",") + "<br>")
+        exibirTexto("Preço Uber: R$")
+        exibirValor(precoUber)
     </script>
 
     <h1>Carro</h1>
     <script>
-        //var distanciaEmKm = parseFloat(prompt("Quantos KMs você vai percorrer?"))
-        var precoLitroCombustivel = parseFloat(prompt("Qual o preço do litro do combustível?").replace(",","."))
-        var consumoCarro = parseFloat(prompt("Qual o consumo médio do veículo?").replace(",","."))
-        var estacionamento = parseFloat( prompt("Digite o valor do estacionamento: ").replace(",","."))
+        var precoLitroCombustivel = pegarNumero("Qual o preço do litro do combustível?")
+        var consumoCarro = pegarNumero("Qual o consumo médio do veículo?")
+        var estacionamento = pegarNumero("Digite o valor do estacionamento: ")
         var gasolina = qtsKm * precoLitroCombustivel / consumoCarro
         var totalCarro = estacionamento + gasolina
+        exibirTexto("Estacionamento: R$")
+        exibirValor(estacionamento)
+        exibirTexto("Gasolina: R$")
+        exibirValor(gasolina)
+        exibirTexto("Total: R$")
+        exibirValor(totalCarro)
 
-        document.write(`
+        /*document.write(`
             Estacionamento: R$  ${estacionamento.toFixed(2).replace("." , ",")} <br>
             Gasolina: R$  ${gasolina.toFixed(2).replace(".",",")} <br>
             Total: R$ ${totalCarro.toFixed(2).replace(".",",")}
