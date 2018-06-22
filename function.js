@@ -1,5 +1,5 @@
-function pegarNumero(texto){
-	return parseFloat(prompt(texto).replace(",","."))
+function pegarNumero(num){
+	return parseFloat(prompt(num).replace(",","."))
 }
 
 function exibirTexto(texto){
