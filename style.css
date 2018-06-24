@@ -1,29 +1,28 @@
 *{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-family: Arial bold;
 }
 
-h1{
-    color: blue;
-    font-size: 48px;
+body{
+	margin: 0;
+	padding: 0;
 }
 
-img{
- 
-    height: 300px;
+.titulo{
+	height: 100px;
+	background-color: #111111;
+	color: #ffffff;
+	text-align: center;
+	line-height: 100px;
 }
 
-p{
-    text-align: center;
+.informacoes{
+	height: 500px;
+	background-color: #282a27;
 }
 
-nome{
-    float: right;
-}
-
-image{
-    float: left;
-}
-
-bold{
-    font-style: bold;
+.informacoes_inter{
+	width: 1000px;
+	margin:auto;
+	padding-top: 60px;
+	color: #11ac12;
 }

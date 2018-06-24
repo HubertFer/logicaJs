@@ -12,8 +12,9 @@
         var tempoHora = qtsKm / velocidadeMedia
         var tempoEmMinutos = tempoHora * 60
         var precoUber = precoBase + (tempoEmMinutos * tempoEmMin) + (precoEmKm * qtsKm)
-        exibirTexto("Preço Uber: R$")
-        exibirValor(precoUber)
+        exibirTexto("Preço Uber: ")
+        formataMoeda(precoUber)
+        
     </script>
 
     <h1>Carro</h1>
@@ -23,11 +24,11 @@
         var estacionamento = pegarNumero("Digite o valor do estacionamento: ")
         var gasolina = qtsKm * precoLitroCombustivel / consumoCarro
         var totalCarro = estacionamento + gasolina
-        exibirTexto("Estacionamento: R$")
-        exibirValor(estacionamento)
-        exibirTexto("Gasolina: R$")
-        exibirValor(gasolina)
-        exibirTexto("Total: R$")
-        exibirValor(totalCarro)
+        exibirTexto("Estacionamento: ")
+        formataMoeda(estacionamento)
+        exibirTexto("Gasolina: ")
+        formataMoeda(gasolina)
+        exibirTexto("Total: ")
+        formataMoeda(totalCarro)
     </script>
 </html>
