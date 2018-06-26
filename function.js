@@ -10,24 +10,23 @@ function formataMoeda(valor){
 	document.write("R$"+(valor).toFixed(2).replace(".",",")+"<br>")
 }
 
-function nome(){
-	var nome = prompt("Nome do Aluno: ")
-	document.write("Nome: " + nome + "<br>")
+function nome(nome){
+	var nome = prompt(nome)
+	return nome
 }
 
-function peso(){
-	var peso = prompt("Digite o Peso do Aluno:")
-	document.write("Peso: " + peso + "kg" + "<br>")
+function peso(peso){
+	var peso = prompt(peso)
+	return peso
 }
 
-function altura(){
-	var altura = prompt("Digite a Altura do Aluno:").replace(".",",")
-	document.write("Altura: " + altura + "<br>")
+function altura(altura){
+	var altura = prompt(altura)
+	return altura
 }
 
-function dob(){
-	var dia = prompt("Digite o dia de nascimento:")
-	var mes = prompt("Digite o mês de nascimento:")
-	var ano = prompt("Digite o ano de nascimento:")
-	document.write("Data de Nascimento: " + dia + "/" + mes + "/" + ano)
+function mostra(mensagem){
+    var tag = document.createElement("p")
+    tag.innerHTML = mensagem
+    document.querySelector(".formulario").appendChild(tag)
 }

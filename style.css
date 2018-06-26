@@ -16,7 +16,6 @@ body{
 }
 
 .informacoes{
-	height: 500px;
 	background-color: #282a27;
 }
 
@@ -25,4 +24,8 @@ body{
 	margin:auto;
 	padding-top: 60px;
 	color: #11ac12;
+}
+
+.formulario{
+	text-align: center;
 }

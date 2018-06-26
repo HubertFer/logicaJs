@@ -4,6 +4,7 @@
 	<title>Fica Cadastral Academia</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="function.js"></script>
+	<script src="libIdade.js"></script>
 	<meta charset="utf-8">
 </head>
 <body>
@@ -13,12 +14,39 @@
 
 	<div class="informacoes">
 		<div class="informacoes_inter">
+			<div class="formulario">
+				Nome <input id = "campoNome"> <br><br>
+				Peso <input id = "campoPeso"> <br><br>
+				Altura <input id = "campoAltura"> <br><br>
+				data de Nascimento <input id = "campoNascimento"> <br><br>
+				<button onclick ="criaAluno()" >
+					Cadastrar Aluno
+				</button>
+			
 			<script>
-				nome()
-				peso()
-				altura()
-				dob()
-			</script>
+				function criaAluno(){
+					var nome = campoNome.value
+					var peso = parseFloat(campoPeso.value)
+					var altura = parseFloat(campoAltura.value.replace(",","."))
+					var dataNascimento = campoNascimento.value
+					var dataNascimentoLista = dataNascimento.split("/")
+					var diaNasci = dataNascimentoLista[0]
+					var mesNasci = dataNascimentoLista[1]
+					var anoNasci = dataNascimentoLista[2]
+					var idade = calculaIdade(diaNasci, mesNasci, anoNasci)
+					
+					mostra(`
+						Nome: ${nome} <br>
+						Peso: ${peso} kg <br>
+						Altura: ${altura}<br>
+						Data de Nascimento: ${dataNascimento}<br>
+						Idade: ${idade}
+						`)
+				
+					//document.write("Data de Nascimento: " + dia + "/" + mes + "/" + ano)
+					}
+				</script>
+			</div>
 		</div>
 	</div>
 </body>
