@@ -1,0 +1,24 @@
+<h1>Loteria do Milhão</h1>
+<meta charset="UTF-8">
+<script src="function.js"></script>
+<button onclick= "start()">
+Start
+</button><br>
+<div class="formulario">
+<script>
+    var jogo = 0
+    function start(){
+        jogo = jogo + 1
+        var meuNumero = prompt("De 1 a 10, escolha um número:")
+        var seuNumero = prompt("Qual foi o número escolhido e 1 a 10: ")
+        
+        if (meuNumero == seuNumero){
+            mostra("Jogo " + jogo + ": Acertou! O número é: " + meuNumero)
+        }
+
+        if (meuNumero != seuNumero){
+            mostra("Jogo " + jogo + ": Errou! O número era: " + meuNumero)
+        }
+    }
+</script>
+</div>
