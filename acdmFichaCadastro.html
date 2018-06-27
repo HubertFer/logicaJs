@@ -21,10 +21,15 @@
 				data de Nascimento <input id = "campoNascimento"> <br><br>
 				<button onclick ="criaAluno()" >
 					Cadastrar Aluno
-				</button>
-			
+				</button><br>
+				<input type="checkbox" id="campoProblemaCardiaco">
+				Tem problema cardíaco
+				<br><br>
+		
 			<script>
+				var numeroDaFicha = 0
 				function criaAluno(){
+					numeroDaFicha = numeroDaFicha +1
 					var nome = campoNome.value
 					var peso = parseFloat(campoPeso.value)
 					var altura = parseFloat(campoAltura.value.replace(",","."))
@@ -34,13 +39,29 @@
 					var mesNasci = dataNascimentoLista[1]
 					var anoNasci = dataNascimentoLista[2]
 					var idade = calculaIdade(diaNasci, mesNasci, anoNasci)
-					
+					var mensagemCardiaco
+					var ehCardiaco = campoProblemaCardiaco.checked
+					var ehcrianca = idade < 16
+
+					if(ehCardiaco || ehcrianca){
+						mensagemCardiaco = "Precisa de acompanhamento médico!"
+					}
+					if(!ehCardiaco && !ehcrianca){
+						mensagemCardiaco = "Não precisa de acompanhamento médico"
+					}
+					if (numeroDaFicha == 1){
+					mostra("<h1>Fichas</h1>")
+						}
 					mostra(`
+						<hr>
+						Ficha ${numeroDaFicha}
+						<hr>
 						Nome: ${nome} <br>
 						Peso: ${peso} kg <br>
 						Altura: ${altura}<br>
 						Data de Nascimento: ${dataNascimento}<br>
-						Idade: ${idade}
+						Idade: ${idade}<br>
+						${mensagemCardiaco}
 						`)
 				
 					//document.write("Data de Nascimento: " + dia + "/" + mes + "/" + ano)
