@@ -28,5 +28,5 @@ function altura(altura){
 function mostra(mensagem){
     var tag = document.createElement("p")
     tag.innerHTML = mensagem
-    document.querySelector(".formulario").appendChild(tag)
+    document.body.appendChild(tag)
 }

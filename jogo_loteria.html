@@ -7,17 +7,29 @@ Start
 <div class="formulario">
 <script>
     var jogo = 0
+    
     function start(){
         jogo = jogo + 1
-        var meuNumero = prompt("De 1 a 10, escolha um número:")
-        var seuNumero = prompt("Qual foi o número escolhido e 1 a 10: ")
-        
-        if (meuNumero == seuNumero){
-            mostra("Jogo " + jogo + ": Acertou! O número é: " + meuNumero)
+        var numeroMisterioso = parseInt(Math.random()* 100)
+        console.log(numeroMisterioso)
+        var seuNumero = pegarNumero("Qual foi o número escolhido e 1 a 100: ")
+        var cont = 0
+        while (seuNumero <0 || seuNumero > 100){
+            cont = cont + 1
+            if(cont == 5){
+                alert("Game Over!")
+                break
+            }
+            seuNumero = pegarNumero("Qual foi o número escolhido e 1 a 100: ")
+            
+
         }
 
-        if (meuNumero != seuNumero){
-            mostra("Jogo " + jogo + ": Errou! O número era: " + meuNumero)
+        if(numeroMisterioso == seuNumero){
+            mostra("Jogo " + jogo + ": Acertou! O número era: " + numeroMisterioso + "<br>")
+            mostra("GAME OVER!!!")
+        }else{
+            mostra("Jogo " + jogo + ": Errou! Número inválido: " + numeroMisterioso)
         }
     }
 </script>
