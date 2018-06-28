@@ -10,17 +10,17 @@ Start
     
     function start(){
         jogo = jogo + 1
-        var numeroMisterioso = parseInt(Math.random()* 100)
+        var numeroMisterioso = parseInt(Math.random()* 10)
         console.log(numeroMisterioso)
-        var seuNumero = pegarNumero("Qual foi o número escolhido e 1 a 100: ")
+        var seuNumero = pegarNumero("Qual foi o número escolhido e 1 a 10: ")
         var cont = 0
-        while (seuNumero <0 || seuNumero > 100){
+        while (seuNumero <0 || seuNumero > 10){
             cont = cont + 1
-            if(cont == 5){
+            if(cont == 3){
                 alert("Game Over!")
                 break
             }
-            seuNumero = pegarNumero("Qual foi o número escolhido e 1 a 100: ")
+            seuNumero = pegarNumero("Número inválido! Escolha um número de: 1 a 10: ")
             
 
         }
