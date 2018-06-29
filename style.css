@@ -15,6 +15,14 @@ body{
 	line-height: 100px;
 }
 
+.loteria{
+	height: 100px;
+	background-color: #111111;
+	color: #ffffff;
+	text-align: center;
+	line-height: 100px;	
+}
+
 .informacoes{
 	background-color: #282a27;
 }

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Mercado Caelum</title>
+        <meta charset="UTF-8">
+        <script src="function.js"></script>
+    </head>
+    <body>
+        <h1>Mercado --SP</h1>
+        Nome: <input id="campoNome"><br>
+        Preço: <input id="campoPreco"><br>
+        <button onclick="adiciona()">
+            Adicionar Produto
+        </button>
+        <button onclick="calcula()">
+            Calcula Total
+        </button>
+        <script>
+            var preco = campoPreco.value
+            var nome = campoNome.value
+            var totalPreco = 0
+            function adiciona(){
+                preco = (parseFloat( campoPreco.value.replace(",",".")))
+                totalPreco = preco + totalPreco
+                mostra(`${nome} R$ ${preco.toFixed(2)}`)
+            }
+            
+            function calcula(){
+               mostra(`Total R$ ${totalPreco}`)
+            }
+
+
+
+
+        </script>
+    </body>
+</html>

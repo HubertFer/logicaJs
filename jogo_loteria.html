@@ -1,36 +1,59 @@
-<h1>Loteria do Milhão</h1>
-<meta charset="UTF-8">
-<script src="function.js"></script>
-<button onclick= "start()">
-Start
-</button><br>
-<div class="formulario">
-<script>
-    var jogo = 0
+<html>
+<head>
+    <title>Loteria do Milhão</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <script src="function.js"></script>
     
-    function start(){
-        jogo = jogo + 1
-        var numeroMisterioso = parseInt(Math.random()* 10)
-        console.log(numeroMisterioso)
-        var seuNumero = pegarNumero("Qual foi o número escolhido e 1 a 10: ")
-        var cont = 0
-        while (seuNumero <0 || seuNumero > 10){
-            cont = cont + 1
-            if(cont == 3){
-                alert("Game Over!")
-                break
+</head>
+<body>
+    <div class="loteria">
+        <h1>Loteria do Milhão</h1>
+        <button onclick= "start()">
+            Start
+        </button><br>
+    </div>
+        <div class="formulario">
+        <script>
+            var jogo = 0
+        
+            function start(){
+                jogo = jogo + 1
+                var listaNumerosMisteriosos = []
+                /*vezes = 1
+                while(vezes <= 6){
+                    listaNumerosMisteriosos.push(parseInt(Math.random()*100))
+                    vezes = vezes +1
+                }
+                */
+
+               for (vezes = 1; vezes <= 6; vezes++){
+                listaNumerosMisteriosos.push(parseInt(Math.random()*100))
+               }
+
+                console.log(listaNumerosMisteriosos)
+                var seuNumero = pegarNumero("Qual foi o número escolhido e 1 a 100: ")
+                var cont = 0
+                while (seuNumero <0 || seuNumero > 100){
+                    cont = cont + 1
+                    if(cont == 3){
+                        alert("Game Over!")
+                        break
+                    }
+                    seuNumero = pegarNumero("Número inválido! Escolha um número de: 1 a 100: ")
+                    mostra(`O número digitado foi: ${seuNumero}`)
+                }
+
+                if(listaNumerosMisteriosos.includes(seuNumero)){
+                    mostra(`O número digitado foi: ${seuNumero}`)
+                    mostra("Jogo " + jogo + ": Acertou! Os número eram: " + listaNumerosMisteriosos + "<br>")
+                    mostra("GAME OVER!!!")
+                }else{
+                    mostra("Jogo " + jogo + ": Errou! Número o número era: " + listaNumerosMisteriosos)
+                    mostra(`O número digitado foi: ${seuNumero}`)
+                }
             }
-            seuNumero = pegarNumero("Número inválido! Escolha um número de: 1 a 10: ")
-            
-
-        }
-
-        if(numeroMisterioso == seuNumero){
-            mostra("Jogo " + jogo + ": Acertou! O número era: " + numeroMisterioso + "<br>")
-            mostra("GAME OVER!!!")
-        }else{
-            mostra("Jogo " + jogo + ": Errou! Número inválido: " + numeroMisterioso)
-        }
-    }
-</script>
-</div>
+            </script>
+    </div>
+</body>
+</html>
