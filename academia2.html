@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Alunos SmartFit</title>
+	<meta charset="utf-8">
+	<script src="function.js"></script>
+</head>
+<body>
+	<h1 align="center">Cadastro de Alunos</h1>
+	<table border="0" align="center">
+		<tr>
+			<td>
+				Nome: 
+			</td>
+			<td>
+				<input id="campoNome">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Peso: 
+			</td>
+			<td>
+				<input id="campoPeso">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Altura: 
+			</td>
+			<td>
+				<input id="campoAltura">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Data de Nascimento (dd/mm/aaa) 
+			</td>
+			<td>
+				<input id="campoNascimento">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Idade:
+			</td>
+			<td>
+				<input id="campoIdade">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="cadastra()">
+					Cadastrar Aluno
+				</button>
+			</td>
+			
+		</tr>
+	</table>
+	<script>
+		var ficha = 0
+		function cadastra(){
+			var nome = campoNome.value
+			var peso = parseFloat(campoPeso.value.replace(",","."))
+			var altura = parseFloat(campoAltura.value.replace(",","."))
+			var dataNascimento = campoNascimento.value
+			var nascimentoLista = dataNascimento.split("/")
+			var dia = nascimentoLista [0]
+			var mes = nascimentoLista [1]
+			var ano = nascimentoLista [2]
+			ficha++
+			if(ficha == 1){
+				mostra(`<h1>Fichas<h1>`)
+			}
+			mostra(`<table border="0">
+					<tr>
+						<td>
+					<hr>
+					Ficha ${ficha}
+					<hr>
+					Nome: ${nome}<br> Peso: ${peso.toFixed(2).replace(".",",")}<br>
+					Altura: ${altura.toFixed(2).replace(".",",")}<br>
+					D. Nascimento ${dia}/${mes}/${ano}<br>
+						</td>
+					</tr>	
+					</table>`)
+		}
+	</script>
+
+	
+</body>
+</html>
