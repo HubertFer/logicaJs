@@ -4,6 +4,7 @@
 	<title>Cadastro de Alunos SmartFit</title>
 	<meta charset="utf-8">
 	<script src="function.js"></script>
+	<script src="libIdade.js"></script>
 </head>
 <body>
 	<h1 align="center">Cadastro de Alunos</h1>
@@ -42,10 +43,8 @@
 		</tr>
 		<tr>
 			<td>
-				Idade:
-			</td>
-			<td>
-				<input id="campoIdade">
+				<input type="checkbox" id="problemaCardiaco">
+				Tem problema cardíaco?
 			</td>
 		</tr>
 		<tr>
@@ -68,6 +67,9 @@
 			var dia = nascimentoLista [0]
 			var mes = nascimentoLista [1]
 			var ano = nascimentoLista [2]
+			var idade = calculaIdade(dia, mes, ano)
+			var cardiaco = problemaCardiaco.checked
+			var crianca = idade < 16
 			ficha++
 			if(ficha == 1){
 				mostra(`<h1>Fichas<h1>`)
@@ -81,9 +83,15 @@
 					Nome: ${nome}<br> Peso: ${peso.toFixed(2).replace(".",",")}<br>
 					Altura: ${altura.toFixed(2).replace(".",",")}<br>
 					D. Nascimento ${dia}/${mes}/${ano}<br>
+					Idade: ${idade}
 						</td>
 					</tr>	
 					</table>`)
+			if(crianca || cardiaco){
+				mostra(`PRECISA DE ACOMPANHAMENTO PARA ATIVIDADE FÍSICA!`)
+			}else{
+				mostra(`SEM RESTRIÇÕES`)
+			}
 		}
 	</script>
 
