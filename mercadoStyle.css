@@ -1,0 +1,35 @@
+*{
+	font-family: arial
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+.topo{
+	background-color: white;
+}
+
+.topoInter{
+	height: 100px;
+	width: 1000px;
+	margin: auto;
+	line-height: 100px;
+	color: #414449;
+	font-size: 36px;
+	font-family: sans-serif;
+}
+
+.conteudo{
+	background-color: #3fcca1;
+	height: 500px;
+}
+
+.conteudoInter{
+	width: 1000px;
+	margin: auto;
+}
+
+.registro{
+	padding-top: 60px;
+}
